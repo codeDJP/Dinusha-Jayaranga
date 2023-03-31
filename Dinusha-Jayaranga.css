@@ -128,6 +128,7 @@
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
   text-shadow: -2px 0px 8px rgba(128,128,128,1);
+  font-family: Roboto, sans-serif;
   margin: -257px 558px 0 12px;
 }
 
@@ -136,6 +137,8 @@
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
   transition-duration: 0.75s;
+  font-size: 1.125rem;
+  font-family: "Open Sans", sans-serif;
   margin: 19px 565px 60px 12px;
 }
 
@@ -149,14 +152,11 @@
     margin-top: -227px;
     margin-right: 370px;
     margin-left: 0;
-    font-family: Roboto, sans-serif;
   }
 
   .u-section-1 .u-text-6 {
     margin-right: 377px;
     margin-left: 0;
-    font-size: 1.125rem;
-    font-family: "Open Sans", sans-serif;
   }
 }
 
@@ -382,6 +382,7 @@
 
   .u-section-1 .u-text-5 {
     font-size: 2.75rem;
+    --animation-custom_in-translate_x: 300px;
     font-family: "League Spartan";
     margin-top: -280px;
     margin-right: -136px;
