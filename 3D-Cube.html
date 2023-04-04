@@ -18,6 +18,9 @@ JavaScript">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.7.9, nicepage.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <link rel="canonical" href="https://www.dinushajayaranga.com/3d-cube">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -118,24 +121,159 @@ JavaScript">
             <div class="face top"></div>
             <div class="bottom face"></div>
           </div>
-          <script> const cube = document.getElementById("cube");
-      let xAngle = 0;
-      let yAngle = 0;
-      document.addEventListener("mousedown", (event) => {
-        const startX = event.pageX;
-        const startY = event.pageY;
-        document.addEventListener("mousemove", rotateCube);
-        document.addEventListener("mouseup", () => {
-          document.removeEventListener("mousemove", rotateCube);
-        });
-        function rotateCube(event) {
-          const dx = event.pageX - startX;
-          const dy = event.pageY - startY;
-          yAngle += dx * 0.02;
-          xAngle -= dy * 0.02;
-          cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
-        }
-      }); </script>
+          <script> <meta charset="UTF-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        perspective: 800px;
+      }
+      
+      .cube {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+      }
+      
+      .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        opacity: 0.8;
+      }
+      
+      .front {
+        transform: translateZ(100px);
+        background-image: url(https://yt3.googleusercontent.com/ytc/AL5GRJXTjmHsV4xLWPb1znBsFx2lMY9-IBFOZ32orkPensM=s900-c-k-c0x00ffffff-no-rj);
+      }
+      
+      .back {
+        transform: rotateX(180deg) translateZ(100px);
+        background-image: url(https://pbs.twimg.com/profile_images/1499122405234847745/hgpeiLPu_400x400.jpg);
+      }
+      
+      .right {
+        transform: rotateY(90deg) translateZ(100px);
+        background-image: url(https://media.licdn.com/dms/image/C5603AQEbHQXBOWnBzA/profile-displayphoto-shrink_200_200/0/1638413035268?e=1683158400&v=beta&t=V_ugEQy9Pvo_HMun9o-EanDpAvHUkwER9Oe06BfAUyo);
+      }
+      
+      .left {
+        transform: rotateY(-90deg) translateZ(100px);
+        background-image: url(https://www.thetaloop.com/resources/dinusha_fig.png);
+      }
+      
+      .top {
+        transform: rotateX(90deg) translateZ(100px);
+        background-image: url(https://pbs.twimg.com/media/FHDQAJNUcAQzbGq?format=jpg&name=large);
+      }
+      
+      .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+        background-image: url(https://pbs.twimg.com/media/EcggBdIWAAADVFp?format=jpg&name=small);
+      }
+    </style>
+  
+  
+    <div class="cube" id="cube">
+      <div class="face front"></div>
+      <div class="back face"></div>
+      <div class="face right"></div>
+      <div class="face left"></div>
+      <div class="face top"></div>
+      <div class="bottom face"></div>
+    </div>
+    <script>
+  const cube = document.getElementById("cube");
+  let xAngle = 0;
+  let yAngle = 0;
+  let startX, startY;
+  // Mouse events
+  document.addEventListener("mousedown", startRotate);
+  document.addEventListener("mouseup", stopRotate);
+  document.addEventListener("mousemove", rotateCube);
+  // Touch events
+  document.addEventListener("touchstart", startRotate);
+  document.addEventListener("touchend", stopRotate);
+  document.addEventListener("touchmove", rotateCube);
+  function startRotate(event) {
+    if (event.type === "mousedown") {
+      startX = event.pageX;
+      startY = event.pageY;
+    } else if (event.type === "touchstart") {
+      startX = event.touches[0].pageX;
+      startY = event.touches[0].pageY;
+    }
+    document.addEventListener("mousemove", rotateCube);
+    document.addEventListener("touchmove", rotateCube);
+  }
+  function stopRotate() {
+    document.removeEventListener("mousemove", rotateCube);
+    document.removeEventListener("touchmove", rotateCube);
+  }
+  function rotateCube(event) {
+    let clientX, clientY;
+    if (event.type === "mousemove") {
+      clientX = event.pageX;
+      clientY = event.pageY;
+    } else if (event.type === const cube = document.getElementById("cube");
+let xAngle = 0;
+let yAngle = 0;
+function rotateCube(event) {
+  const dx = event.clientX - startX;
+  const dy = event.clientY - startY;
+  yAngle += dx * 0.02;
+  xAngle -= dy * 0.02;
+  cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
+}
+function handleMouseDown(event) {
+  startX = event.clientX;
+  startY = event.clientY;
+  document.addEventListener("mousemove", rotateCube);
+  document.addEventListener("mouseup", handleMouseUp);
+}
+function handleMouseUp() {
+  document.removeEventListener("mousemove", rotateCube);
+}
+function handleTouchStart(event) {
+  const touch = event.changedTouches[0];
+  startX = touch.clientX;
+  startY = touch.clientY;
+  document.addEventListener("touchmove", handleTouchMove);
+  document.addEventListener("touchend", handleTouchEnd);
+}
+function handleTouchMove(event) {
+  event.preventDefault();
+  const touch = event.changedTouches[0];
+  const dx = touch.clientX - startX;
+  const dy = touch.clientY - startY;
+  yAngle += dx * 0.02;
+  xAngle -= dy * 0.02;
+  cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
+}
+function handleTouchEnd() {
+  document.removeEventListener("touchmove", handleTouchMove);
+  document.removeEventListener("touchend", handleTouchEnd);
+}
+cube.addEventListener("mousedown", handleMouseDown);
+cube.addEventListener("touchstart", handleTouchStart);
+"touchmove") {
+      clientX = event.touches[0].pageX;
+      clientY = event.touches[0].pageY;
+    }
+    const dx = clientX - startX;
+    const dy = clientY - startY;
+    yAngle += dx * 0.02;
+    xAngle -= dy * 0.02;
+    cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
+  } </script>
         </div>
         <blockquote class="u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="750"> This cube design is an example of a 3D cube made using HTML, CSS, and JavaScript. The cube is designed using six rectangular faces, each with a different background image. The cube can be rotated on the X and Y axis using mouse movement events. The design is achieved using CSS transforms, which allow the cube to be rotated in 3D space.The code consists of HTML, CSS, and JavaScript. The HTML code defines a div element with a class of "cube". Inside the cube element, there are six child div elements, each with a different class name corresponding to the different faces of the cube. The CSS code defines the styles for the cube and its faces, including their dimensions, position, and background images. The JavaScript code handles the mouse events and the cube rotation using CSS transforms.</blockquote>
       </div>

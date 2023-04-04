@@ -1329,7 +1329,7 @@
 
 @media (max-width: 991px) {
   .u-section-4 .u-sheet-1 {
-    min-height: 1024px;
+    min-height: 100vh;
   }
 
   .u-section-4 .u-group-1 {
@@ -1368,8 +1368,9 @@
   .u-section-4 .u-image-1 {
     width: 376px;
     height: 483px;
-    margin-top: -125px;
-    margin-right: 28px;
+    margin-top: -192px;
+    margin-right: 26px;
+    margin-bottom: 47px;
   }
 }
 

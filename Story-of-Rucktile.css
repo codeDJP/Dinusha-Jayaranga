@@ -1,5 +1,5 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 5963px;
+  min-height: 460px;
 }
 
 .u-section-1 .u-text-1 {
@@ -7,13 +7,18 @@
   box-shadow: 0px 0px 0px rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
-  margin: 0;
+  margin: 36px 0 -5443px;
 }
 
 @media (max-width: 767px) {
   .u-section-1 .u-text-1 {
     margin-top: 60px;
-    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-1 {
+    margin-bottom: 0;
   }
 }
 
@@ -29,37 +34,65 @@
 
 .u-container-layout.hover .u-section-1 .u-text-1 {
   transform: rotate(0deg) scale(1) translateX(0px) translateY(0px) !important;
-} .u-section-2 {
+}.u-section-2 .u-sheet-1 {
+  min-height: 400px;
+}
+
+.u-section-2 .u-image-1 {
+  width: 245px;
+  height: 400px;
+  margin: 20px auto 60px;
+}.u-section-3 .u-sheet-1 {
+  min-height: 524px;
+}
+
+.u-section-3 .u-text-1 {
+  margin: 0 0 9px;
+}
+
+@media (max-width: 767px) {
+  .u-section-3 .u-text-1 {
+    margin-top: 60px;
+  }
+}.u-section-4 .u-sheet-1 {
+  min-height: 47px;
+}
+
+.u-section-4 .u-text-1 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+} .u-section-5 {
   background-image: none;
 }
 
-.u-section-2 .u-sheet-1 {
+.u-section-5 .u-sheet-1 {
   min-height: 596px;
 }
 
-.u-section-2 .u-text-1 {
+.u-section-5 .u-text-1 {
   font-weight: 700;
   margin: 60px auto 0;
 }
 
-.u-section-2 .u-form-1 {
+.u-section-5 .u-form-1 {
   width: 570px;
   margin: 30px auto 60px;
 }
 
-.u-section-2 .u-input-1 {
+.u-section-5 .u-input-1 {
   text-transform: uppercase;
 }
 
-.u-section-2 .u-input-2 {
+.u-section-5 .u-input-2 {
   text-transform: uppercase;
 }
 
-.u-section-2 .u-input-3 {
+.u-section-5 .u-input-3 {
   text-transform: uppercase;
 }
 
-.u-section-2 .u-btn-1 {
+.u-section-5 .u-btn-1 {
   background-image: none;
   border-style: solid;
   text-transform: uppercase;
@@ -67,13 +100,13 @@
 }
 
 @media (max-width: 767px) {
-  .u-section-2 .u-form-1 {
+  .u-section-5 .u-form-1 {
     width: 540px;
   }
 }
 
 @media (max-width: 575px) {
-  .u-section-2 .u-form-1 {
+  .u-section-5 .u-form-1 {
     width: 340px;
   }
 }
