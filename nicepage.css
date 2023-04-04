@@ -41344,6 +41344,14 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 }
 @media (max-width: 991px) {
+  .u-header .u-sheet-1 {
+    min-height: 109px;
+  }
+
+  .u-header .u-image-1 {
+    margin-top: 15px;
+  }
+
   .u-header .u-shape-1 {
     margin-top: -40px;
     margin-right: 266px;
@@ -41351,38 +41359,37 @@ a.u-link.u-text-hover-grey-90:hover {
 
   .u-header .u-shape-2 {
     margin-top: -80px;
-    margin-bottom: 45px;
+    margin-bottom: 33px;
     margin-left: 266px;
   }
 }
 @media (max-width: 767px) {
   .u-header .u-shape-1 {
-    margin-top: -44px;
+    margin-top: -40px;
     margin-right: 177px;
   }
 
   .u-header .u-shape-2 {
-    margin-top: -76px;
+    margin-top: -80px;
     margin-left: 179px;
   }
 }
 @media (max-width: 575px) {
   .u-header .u-sheet-1 {
-    min-height: 99px;
+    min-height: 106px;
   }
 
   .u-header .u-image-1 {
-    margin-top: 21px;
+    width: 163px;
+    margin-top: 34px;
   }
 
   .u-header .u-shape-1 {
-    margin-top: -35px;
+    margin-top: -38px;
     margin-right: 76px;
   }
 
   .u-header .u-shape-2 {
-    margin-top: -82px;
-    margin-bottom: 39px;
     margin-left: 78px;
   }
 }

@@ -246,36 +246,36 @@
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 715px;
+    min-height: 789px;
   }
 
   .u-section-1 .u-layout-wrap-1 {
-    margin-top: 35px;
+    margin-top: 29px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
   .u-section-1 .u-layout-cell-1 {
-    min-height: 431px;
+    min-height: 490px;
   }
 
   .u-section-1 .u-image-1 {
-    width: 366px;
-    height: 401px;
-    margin-top: 0;
-    margin-left: -70px;
+    width: 345px;
+    height: 460px;
+    margin-top: 30px;
+    margin-left: -53px;
   }
 
   .u-section-1 .u-image-2 {
     width: 359px;
-    height: 478px;
-    margin-top: -478px;
-    margin-right: -49px;
+    height: 479px;
+    margin-top: -479px;
+    margin-right: -41px;
   }
 
   .u-section-1 .u-layout-cell-2 {
-    min-height: 315px;
+    min-height: 241px;
   }
 
   .u-section-1 .u-text-1 {

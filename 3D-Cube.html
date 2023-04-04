@@ -18,10 +18,6 @@ JavaScript">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.7.9, nicepage.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
     <link rel="canonical" href="https://www.dinushajayaranga.com/3d-cube">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
@@ -32,7 +28,7 @@ JavaScript">
 		"@type": "Organization",
 		"name": "Dinushajayaranga",
 		"url": "https://www.dinushajayaranga.com/3d-cube",
-		"logo": "images/image.png"
+		"logo": "images/image.webp"
 }</script>
     <meta name="theme-color" content="#fcb35b">
     <meta property="og:title" content="3D Cube">
@@ -40,9 +36,9 @@ JavaScript">
     <meta property="og:url" content="https://www.dinushajayaranga.com/3d-cube">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-4010"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Dinusha-Jayaranga.html" class="u-align-center u-image u-logo u-image-1" data-image-width="7524" data-image-height="2720" title="Dinusha jayaranga">
-          <img src="images/image.png" class="u-logo-image u-logo-image-1">
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-4010"><div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
+        <a href="Dinusha-Jayaranga.html" class="u-align-center u-image u-logo u-image-1" data-image-width="1920" data-image-height="694" title="Dinusha jayaranga">
+          <img src="images/image.webp" class="u-logo-image u-logo-image-1">
         </a>
         <div class="u-border-3 u-border-custom-color-1 u-shape u-shape-left u-shape-top u-shape-1"></div>
         <div class="u-border-3 u-border-black u-shape u-shape-bottom u-shape-right u-shape-2"></div>
@@ -55,225 +51,116 @@ JavaScript">
     </section>
     <section class="u-clearfix u-section-2" id="sec-9887">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-custom-html u-custom-html-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="Left">
-          <meta charset="UTF-8">
+        <div class="u-border-2 u-border-grey-75 u-clearfix u-custom-html u-custom-html-1">
           <title></title>
-          <style> * {
+          <style> body {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        overflow: hidden;
       }
       
-      body {
-        perspective: 800px;
+      #cube-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        perspective: 1000px;
       }
       
-      .cube {
+      #cube {
         width: 200px;
         height: 200px;
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
         transform-style: preserve-3d;
-        transition: transform 1s;
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+        transition: transform 0.3s ease-in-out;
       }
       
-      .face {
+      #cube figure {
+        margin: 0;
+        display: block;
         position: absolute;
         width: 200px;
         height: 200px;
+        border: 2px solid #fff;
+      }
+      
+      #cube .front {
+        background: url(https://yt3.googleusercontent.com/ytc/AL5GRJXTjmHsV4xLWPb1znBsFx2lMY9-IBFOZ32orkPensM=s900-c-k-c0x00ffffff-no-rj) no-repeat center center;
         background-size: cover;
-        opacity: 0.8;
-      }
-      
-      .front {
         transform: translateZ(100px);
-        background-image: url(https://yt3.googleusercontent.com/ytc/AL5GRJXTjmHsV4xLWPb1znBsFx2lMY9-IBFOZ32orkPensM=s900-c-k-c0x00ffffff-no-rj);
       }
       
-      .back {
-        transform: rotateX(180deg) translateZ(100px);
-        background-image: url(https://pbs.twimg.com/profile_images/1499122405234847745/hgpeiLPu_400x400.jpg);
+      #cube .back {
+        background: url(https://pbs.twimg.com/profile_images/1499122405234847745/hgpeiLPu_400x400.jpg) no-repeat center center;
+        background-size: cover;
+        transform: rotateY(180deg) translateZ(100px);
       }
       
-      .right {
+      #cube .right {
+        background: url(https://media.licdn.com/dms/image/C5603AQEbHQXBOWnBzA/profile-displayphoto-shrink_200_200/0/1638413035268?e=1683158400&v=beta&t=V_ugEQy9Pvo_HMun9o-EanDpAvHUkwER9Oe06BfAUyo) no-repeat center center;
+        background-size: cover;
         transform: rotateY(90deg) translateZ(100px);
-        background-image: url(https://media.licdn.com/dms/image/C5603AQEbHQXBOWnBzA/profile-displayphoto-shrink_200_200/0/1638413035268?e=1683158400&v=beta&t=V_ugEQy9Pvo_HMun9o-EanDpAvHUkwER9Oe06BfAUyo);
       }
       
-      .left {
+      #cube .left {
+        background: url(https://www.thetaloop.com/resources/dinusha_fig.png) no-repeat center center;
+        background-size: cover;
         transform: rotateY(-90deg) translateZ(100px);
-        background-image: url(https://www.thetaloop.com/resources/dinusha_fig.png);
       }
       
-      .top {
-        transform: rotateX(90deg) translateZ(100px);
-        background-image: url(https://pbs.twimg.com/media/FHDQAJNUcAQzbGq?format=jpg&name=large);
-      }
-      
-      .bottom {
+      #cube .top {
+        background: url(https://pbs.twimg.com/media/FHDQAJNUcAQzbGq?format=jpg&name=large) no-repeat center center;
+        background-size: cover;
         transform: rotateX(-90deg) translateZ(100px);
-        background-image: url(https://pbs.twimg.com/media/EcggBdIWAAADVFp?format=jpg&name=small);
+      }
+      
+      #cube .bottom {
+        background: url(https://pbs.twimg.com/media/EcggBdIWAAADVFp?format=jpg&name=small) no-repeat center center;
+        background-size: cover;
+        transform: rotateX(90deg) translateZ(100px);
       } </style>
-          <div class="cube" id="cube">
-            <div class="face front"></div>
-            <div class="back face"></div>
-            <div class="face right"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="bottom face"></div>
+          <div id="cube-container">
+            <div id="cube">
+              <figure class="front"></figure>
+              <figure class="back"></figure>
+              <figure class="right"></figure>
+              <figure class="left"></figure>
+              <figure class="top"></figure>
+              <figure class="bottom"></figure>
+            </div>
           </div>
-          <script> <meta charset="UTF-8">
-    <title></title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        perspective: 800px;
-      }
-      
-      .cube {
-        width: 200px;
-        height: 200px;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 1s;
-      }
-      
-      .face {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background-size: cover;
-        opacity: 0.8;
-      }
-      
-      .front {
-        transform: translateZ(100px);
-        background-image: url(https://yt3.googleusercontent.com/ytc/AL5GRJXTjmHsV4xLWPb1znBsFx2lMY9-IBFOZ32orkPensM=s900-c-k-c0x00ffffff-no-rj);
-      }
-      
-      .back {
-        transform: rotateX(180deg) translateZ(100px);
-        background-image: url(https://pbs.twimg.com/profile_images/1499122405234847745/hgpeiLPu_400x400.jpg);
-      }
-      
-      .right {
-        transform: rotateY(90deg) translateZ(100px);
-        background-image: url(https://media.licdn.com/dms/image/C5603AQEbHQXBOWnBzA/profile-displayphoto-shrink_200_200/0/1638413035268?e=1683158400&v=beta&t=V_ugEQy9Pvo_HMun9o-EanDpAvHUkwER9Oe06BfAUyo);
-      }
-      
-      .left {
-        transform: rotateY(-90deg) translateZ(100px);
-        background-image: url(https://www.thetaloop.com/resources/dinusha_fig.png);
-      }
-      
-      .top {
-        transform: rotateX(90deg) translateZ(100px);
-        background-image: url(https://pbs.twimg.com/media/FHDQAJNUcAQzbGq?format=jpg&name=large);
-      }
-      
-      .bottom {
-        transform: rotateX(-90deg) translateZ(100px);
-        background-image: url(https://pbs.twimg.com/media/EcggBdIWAAADVFp?format=jpg&name=small);
-      }
-    </style>
+          <script> const cube = document.querySelector("#cube");
+  let initialX, initialY;
+  let currentX = 0, currentY = 0;
+  let isDragging = false;
   
+  cube.addEventListener("mousedown", (event) => {
+    initialX = event.clientX;
+    initialY = event.clientY;
+    isDragging = true;
+  });
   
-    <div class="cube" id="cube">
-      <div class="face front"></div>
-      <div class="back face"></div>
-      <div class="face right"></div>
-      <div class="face left"></div>
-      <div class="face top"></div>
-      <div class="bottom face"></div>
-    </div>
-    <script>
-  const cube = document.getElementById("cube");
-  let xAngle = 0;
-  let yAngle = 0;
-  let startX, startY;
-  // Mouse events
-  document.addEventListener("mousedown", startRotate);
-  document.addEventListener("mouseup", stopRotate);
-  document.addEventListener("mousemove", rotateCube);
-  // Touch events
-  document.addEventListener("touchstart", startRotate);
-  document.addEventListener("touchend", stopRotate);
-  document.addEventListener("touchmove", rotateCube);
-  function startRotate(event) {
-    if (event.type === "mousedown") {
-      startX = event.pageX;
-      startY = event.pageY;
-    } else if (event.type === "touchstart") {
-      startX = event.touches[0].pageX;
-      startY = event.touches[0].pageY;
+  cube.addEventListener("mousemove", (event) => {
+    if (isDragging) {
+      const deltaX = event.clientX - initialX;
+      const deltaY = event.clientY - initialY;
+      
+      currentY += deltaX * 0.1;
+      currentX -= deltaY * 0.1;
+      
+      cube.style.transform = `translate(-50%, -50%) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
     }
-    document.addEventListener("mousemove", rotateCube);
-    document.addEventListener("touchmove", rotateCube);
-  }
-  function stopRotate() {
-    document.removeEventListener("mousemove", rotateCube);
-    document.removeEventListener("touchmove", rotateCube);
-  }
-  function rotateCube(event) {
-    let clientX, clientY;
-    if (event.type === "mousemove") {
-      clientX = event.pageX;
-      clientY = event.pageY;
-    } else if (event.type === const cube = document.getElementById("cube");
-let xAngle = 0;
-let yAngle = 0;
-function rotateCube(event) {
-  const dx = event.clientX - startX;
-  const dy = event.clientY - startY;
-  yAngle += dx * 0.02;
-  xAngle -= dy * 0.02;
-  cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
-}
-function handleMouseDown(event) {
-  startX = event.clientX;
-  startY = event.clientY;
-  document.addEventListener("mousemove", rotateCube);
-  document.addEventListener("mouseup", handleMouseUp);
-}
-function handleMouseUp() {
-  document.removeEventListener("mousemove", rotateCube);
-}
-function handleTouchStart(event) {
-  const touch = event.changedTouches[0];
-  startX = touch.clientX;
-  startY = touch.clientY;
-  document.addEventListener("touchmove", handleTouchMove);
-  document.addEventListener("touchend", handleTouchEnd);
-}
-function handleTouchMove(event) {
-  event.preventDefault();
-  const touch = event.changedTouches[0];
-  const dx = touch.clientX - startX;
-  const dy = touch.clientY - startY;
-  yAngle += dx * 0.02;
-  xAngle -= dy * 0.02;
-  cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
-}
-function handleTouchEnd() {
-  document.removeEventListener("touchmove", handleTouchMove);
-  document.removeEventListener("touchend", handleTouchEnd);
-}
-cube.addEventListener("mousedown", handleMouseDown);
-cube.addEventListener("touchstart", handleTouchStart);
-"touchmove") {
-      clientX = event.touches[0].pageX;
-      clientY = event.touches[0].pageY;
-    }
-    const dx = clientX - startX;
-    const dy = clientY - startY;
-    yAngle += dx * 0.02;
-    xAngle -= dy * 0.02;
-    cube.style.transform = `rotateX(${xAngle}deg) rotateY(${yAngle}deg)`;
-  } </script>
+  });
+  
+  cube.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+  
+  cube.addEventListener("mouseleave", () => {
+    isDragging = false;
+  }); </script>
         </div>
         <blockquote class="u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="750"> This cube design is an example of a 3D cube made using HTML, CSS, and JavaScript. The cube is designed using six rectangular faces, each with a different background image. The cube can be rotated on the X and Y axis using mouse movement events. The design is achieved using CSS transforms, which allow the cube to be rotated in 3D space.The code consists of HTML, CSS, and JavaScript. The HTML code defines a div element with a class of "cube". Inside the cube element, there are six child div elements, each with a different class name corresponding to the different faces of the cube. The CSS code defines the styles for the cube and its faces, including their dimensions, position, and background images. The JavaScript code handles the mouse events and the cube rotation using CSS transforms.</blockquote>
       </div>
@@ -282,7 +169,8 @@ cube.addEventListener("touchstart", handleTouchStart);
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-b81b"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">© 2023 Dinusha Jayaranga.&nbsp; All rights reserved.<br>
-          <span style="font-size: 1rem;">Powered By Sri Dinushow</span>
+          <span style="font-size: 1rem;">Powered By <span style="font-weight: 400;">Sri Dinushow</span>
+          </span>
         </p>
       </div></footer>
   
