@@ -1239,11 +1239,15 @@
 }
 
 @media (max-width: 575px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 234px;
+  }
+
   .u-section-3 .u-btn-1 {
     margin-top: 22px;
-    margin-bottom: 48px;
-    padding-right: 40px;
+    margin-bottom: 24px;
     padding-left: 40px;
+    padding-right: 40px;
   }
 }.u-section-4 .u-sheet-1 {
   min-height: 100vh;
