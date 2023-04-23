@@ -23,7 +23,7 @@
 		"logo": "images/image.webp"
 }</script>
     <meta name="theme-color" content="#fcb35b">
-    <meta property="og:title" content="BetaLoop - Chat with Unknow Friends Online">
+    <meta property="og:title" content="BetaLoop - Chat with Unknow Friends OnlineBetaLoop - Chat with Unknow Friends Online">
     <meta property="og:description" content="Chat with Unknow Friends Online using BetaLoop, a fast and secure messaging platform developed by Dinusha Jayaranga. Stay connected with your loved ones from anywhere in the world.">
     <meta property="og:url" content="https://www.dinushajayaranga.com/BetaLoop">
     <meta property="og:type" content="website">
@@ -42,117 +42,178 @@
             <h1 class="u-custom-font u-font-lobster u-hover-feature u-text u-text-1">BetaLoop</h1>
             <p class="u-custom-font u-font-courier-new u-text u-text-default-lg u-text-default-xl u-text-2">You can Chat here, that someone online in this page RN...!</p>
             <div class="u-container-style u-group u-radius-30 u-shape-round u-white u-group-2">
-              <div class="u-container-layout u-valign-top-sm u-valign-top-xs u-container-layout-2">
+              <div class="u-container-layout u-valign-bottom-md u-valign-bottom-xs u-valign-middle-lg u-valign-middle-sm u-container-layout-2">
                 <div class="u-clearfix u-custom-html u-custom-html-1">
                   <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <style> body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-      }
-      
-      #container {
-        display: flex;
-        flex-direction: column;
-        height: 50vh;
-        width: 100%;
-      }
-      
-      #chatbox {
-        flex: 1;
-        overflow-y: scroll;
-        padding: 10px;
-      }
-      
-      .message {
-        background-color: #f2f2f2;
-        border-radius: 5px;
-        padding: 10px;
-        margin-bottom: 10px;
-        max-width: 80%;
-      }
-      
-      .message-in {
-        align-self: flex-start;
-      }
-      
-      .message-out {
-        align-self: flex-end;
-        background-color: #0084ff;
-        color: #fff;
-      }
-      
-      #inputbox {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #f2f2f2;
-      }
-      
-      #inputbox input {
-        flex: 1;
-        margin-right: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        font-size: 16px;
-      } </style>
-                  <div id="container">
-                    <div id="chatbox"><!-- Add any previously saved messages here --></div>
-                    <div id="inputbox">
-                      <input type="text" id="input" placeholder="Type your message and press enter">
-                    </div>
-                  </div>
-                  <script> const chatbox = document.getElementById('chatbox');
-  const input = document.getElementById('input');
-  const MAX_MESSAGES = 10;
-  let messages = [];
-  function addMessage(message, className) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', className);
-    messageElement.innerText = message;
-    chatbox.appendChild(messageElement);
-    chatbox.scrollTop = chatbox.scrollHeight;
-  }
-  function sendMessage() {
-    const message = input.value.trim();
-    if (message !== '') {
-      addMessage(message, 'message-out');
-      messages.push({
-        text: message,
-        direction: 'out'
-      });
-      // Remove the oldest message if we have more than MAX_MESSAGES
-      if (chatbox.children.length > MAX_MESSAGES) {
-        chatbox.removeChild(chatbox.children[0]);
-      }
-      chatbox.scrollTop = chatbox.scrollHeight;
-      input.value = '';
-      localStorage.setItem('messages', JSON.stringify(messages));
-    }
-  }
-  input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      sendMessage();
-    }
+                  <title>BetaLoop - Chat with Unknow Friends Online</title><!-- Firebase -->
+                  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-database-compat.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics-compat.js"></script>
+                  <script> // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyCHaTHAdvxs6goOOKp6rz1EfjRaZrzXuvc",
+authDomain: "betaloop-d9d0b.firebaseapp.com",
+databaseURL: "https://betaloop-d9d0b-default-rtdb.asia-southeast1.firebasedatabase.app",
+projectId: "betaloop-d9d0b",
+storageBucket: "betaloop-d9d0b.appspot.com",
+messagingSenderId: "361699528937",
+appId: "1:361699528937:web:e1c0a148f3dd85ad656078",
+measurementId: "G-17LKBJTVRP"
+};
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  // Get a reference to the database service
+  const database = firebase.database(); </script>
+                  <style> @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+	* {
+	  box-sizing: border-box;
+	  margin: 0;
+	  padding: 0;
+	}
+	html, body {
+	  height: 100%;
+	}
+	body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+.message-container {
+  padding: 20px;
+  max-width: 80vw;
+  margin: 0 auto;
+  flex: 1;
+  overflow-y: scroll;
+  height: 50vh;
+}
+	.message {
+	  display: flex;
+	  align-items: flex-end;
+	  margin: 10px 0;
+	  padding: 12px;
+	  border-radius: 20px;
+	  max-width: 60%;
+	  font-size: 16px;
+	  clear: both;
+	  position: relative;
+	  font-weight: 500;
+	}
+	.incoming {
+	  background-color: #1dce6c;
+	  color: #ffffff;
+	  float: left;
+	  align-self: flex-start;
+	}
+	.incoming::before {
+	  content: '';
+	  position: absolute;
+	  top: 0;
+	  left: -20px;
+	  border-style: solid;
+	  border-width: 8px 15px 8px 0;
+	  border-color: transparent #1dce6c transparent transparent;
+	}
+	.outgoing {
+	  background-color: #e0e0e0;
+	  float: right;
+	  align-self: flex-end;
+	}
+	.outgoing::before {
+	  content: '';
+	  position: absolute;
+	  top: 0;
+	  right: -20px;
+	  border-style: solid;
+	  border-width: 8px 0 8px 15px;
+	  border-color: transparent transparent transparent #e0e0e0;
+	}
+		.timestamp {
+	  font-size: 12px;
+	  color: #999;
+	  margin-top: 2px;
+margin-left: 10px;
+	  font-weight: 400;
+	}
+	.outgoing .timestamp {
+	  margin-right: 10px;
+	}
+	.incoming .timestamp {
+	  margin-left: 10px;
+	}
+	
+	input[type="text"] {
+	  flex: 1;
+	  padding: 10px;
+	  border-radius: 25px;
+	  outline: none;
+	  font-weight: 500;
+	  transition: border-color 0.3s;
+	  background-color: transparent;
+	  border: none;
+	  border-bottom: 1px solid #ccc;
+	  width: 100%;
+		margin-bottom: -10px;
+	}
+	input[type="text"]:focus {
+	  border-color: #feb34e;
+	} </style>
+                  <div class="message-container" id="messages"></div>
+                  <form onsubmit="return sendMessage();">
+                    <input type="text" id="messageInput" placeholder="Type your message...">
+                  </form>
+                  <script> // Reference to the messages node in Firebase
+  const messagesRef = firebase.database().ref('messages');
+  // Listen for new messages in the database and update the chat
+  messagesRef.on('child_added', (snapshot) => {
+    const message = snapshot.val();
+    displayMessage(message.text, message.sender, snapshot.key);
   });
-  window.addEventListener('load', () => {
-    const savedMessages = localStorage.getItem('messages');
-    if (savedMessages) {
-      messages = JSON.parse(savedMessages);
-      messages.forEach((message) => {
-        addMessage(message.text, `message-${message.direction}`);
+  // Function to send a new message to Firebase
+  function sendMessage() {
+    const messageInput = document.getElementById("messageInput");
+    const text = messageInput.value.trim();
+    if (text.length > 0) {
+      messagesRef.push({
+        text: text,
+        sender: "user1" // Replace with actual user ID
       });
-      // Remove any excess messages
-      while (chatbox.children.length > MAX_MESSAGES) {
-        chatbox.removeChild(chatbox.children[0]);
-      }
+      messageInput.value = "";
     }
-  }); </script>
+    return false;
+  }
+  // Function to display a message in the chat
+  function displayMessage(text, sender, messageId) {
+    const messageNode = document.createElement("div");
+    messageNode.setAttribute("id", messageId);
+    messageNode.innerText = text;
+    messageNode.classList.add("message");
+    if (sender === "user1") {
+      messageNode.classList.add("outgoing");
+    } else {
+      messageNode.classList.add("incoming");
+    }
+    const timestampNode = document.createElement("div");
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    timestampNode.innerText = `${hours}:${minutes}`;
+    timestampNode.classList.add("timestamp");
+    messageNode.appendChild(timestampNode);
+    document.getElementById("messages").appendChild(messageNode);
+    const messageContainer = document.getElementById("messages");
+    if (messageContainer.childNodes.length > 7) {
+      const oldestMessage = messageContainer.firstChild;
+      const oldestMessageId = oldestMessage.id;
+      messageContainer.removeChild(oldestMessage);
+      messagesRef.child(oldestMessageId).remove();
+    }
+    if (messageContainer.childNodes.length > 5) {
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+  } </script>
                 </div>
               </div>
             </div>
